@@ -1,8 +1,17 @@
-#main {
+body{
+  margin:2em auto;
+  max-width:40em;
+  line-height:1.4;
+  font-size:1.125em;
+  color:#555;
+  padding:0
+  10px;
 
-  width: 40em;
+  background-color:#EEEEEE;
+}
 
-  margin-left: auto;
+h1,h2,h3{line-height:1.2}
 
-  margin-right: auto;
+a{
+  color:#0077aa
 }
