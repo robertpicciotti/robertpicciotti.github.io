@@ -23,11 +23,32 @@
 		By
 		<a href="/"> Robert Picciotti </a>
 
-	</div>
+	<h1>
+		Table of Contents
+	</h1>
+	<ul>
+		<li>
+			<a href = "#intro">Introduction</a>
+			<ul>
+				<li>
+					<a href = "#ratchet_intro">The Double Ratchet</a>
+				</li>
+				<li>
+					<a href = "#primitives_intro">The Primitives</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href = "#abstract">Abstract</a>
+		</li>
+		<li>
+			<a href = "#references">References</a>
+		</li>
+	</ul>
 
-	<h3>
-		The Signal Protocol
-	</h3>
+	<h2 id="intro">
+		The Signal Protocol - An Introduction
+	</h2>
 	<p>
 		The Signal Protocol is developed by Open Whisper Systems.
 		The project aims to create a secure messaging protocol for use
@@ -36,16 +57,41 @@
 		Google Allo. The Signal app and WhatsApp both use the protocol
 		for all messages, whereas Facebook Messenger and Google Allo
 		only use it for "secret messages."
-		<br> <br>
-		A notable feature of the protocol is the Double Ratchet
-		Algorithm. The ratchet is based on the Diffie Hellman ratchet
-		used for Off-The-Record messaging.
 	</p>
 
-	<h3> Project Abstract </h3>
+	<h3 id="ratchet_intro">
+		The Double Ratchet
+	</h3>
+	<p>
+		A notable feature of the protocol is the Double Ratchet
+		Algorithm. The ratchet is based on the Diffie Hellman ratchet
+		used for Off-The-Record messaging. A key aim was to allow for more secure
+		"long lived" conversations. OTR is primarily used for instant messaging,
+		where conversations are often ended and both parties reauthenticate the
+		next time they communicate. Modern messaging needs tend to be focused on
+		long lived conversations, at times spanning years.
+		<br>
+		<br>
+		The author's of the Double Ratchet refer to it as "self-healing." This is
+		because it aims to not be compromised because any one messages key is
+		compromised. If one message in a conversation is compromised there should
+		be no need to worry that the whole conversation is compromised.
+		<br>
+		<br>
+		It is designed to detect when messages are reordered, deleted, or replayed.
+	</p>
+
+	<h3 id="primitives_intro">
+		The Primitives
+	</h3>
+	<p>
+		The Signal Protocol's primitives are Curve25519, AES-256 and HMAC-SHA256.
+	</p>
+
+	<h2 id = "abstract"> Project Abstract </h2>
 
 	<p>
-		I would like to do an analysis of the security properties of
+		I will do an analysis of the security properties of
 		the Double Ratchet Algorithm. The Double Ratchet aims to have
 		the unique feature of being "self-healing." Through the use
 		of short-lived session keys, it aims to make it impossible to
@@ -53,17 +99,30 @@
 		cracked.
 	</p>
 
-	<h3>
-		Sources
-	</h3>
-		<ul style="list-style-type:circle">
+	<h2 id = "references">
+		References
+	</h2>
+		<ul style="list-style-type:blank">
 			<li>
-				A
 				<a href=
 				"https://whispersystems.org/docs/specifications/doubleratchet/doubleratchet.pdf">
-				paper</a>
-				by Open Whisper Systems documenting the Double Ratchet Algorithm.
+				https://whispersystems.org/docs/specifications/doubleratchet/doubleratchet.pdf</a>
+				<br>
+				A paper by Open Whisper Systems documenting the Double Ratchet Algorithm.
 			</li>
+
+			<li>
+				<a href = "https://whispersystems.org/docs/specifications/x3dh/">
+					https://whispersystems.org/docs/specifications/x3dh/</a>
+				<br>
+				An article discussing the modifications made to Triple Diffie Hellman.
+
+			<li>
+				<a href ="https://whispersystems.org/blog/advanced-ratcheting/">
+					https://whispersystems.org/blog/advanced-ratcheting/</a>
+				<br>
+				One of the earliest articles released by Open Whisper Systems on the
+				Double Ratchet
 
 
 		</ul>
