@@ -20,3 +20,10 @@ h1,h2,h3{
 a{
   color:#0077aa
 }
+
+
+div.fright{
+  float: left;
+  width: 55%;
+  padding-right: 1em
+}
