@@ -26,5 +26,7 @@ a{
 div.fleft{
   float: left;
   width: 55%;
+  line-height:1.6;
+  font-size:1.3em;
   padding-right: 1em
 }
